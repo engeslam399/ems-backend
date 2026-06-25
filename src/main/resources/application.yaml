@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: ems
+  datasource:
+    url: jdbc:mysql://localhost:3306/ems_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: 
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+  sql:
+    init:
+      mode: always
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
